@@ -1,0 +1,60 @@
+server:
+  port: 8080
+spring:
+  application: parrot-oj-backend-gateway
+  cloud:
+    # Sentinel 控制台连接配置
+    sentinel:
+      transport:
+        # 当前服务与控制台交互的端口号,默认为8719,同一个机器上若有多个应用于控制台交互时需要设置成不同的端口
+        port: 8739
+        dashboard: 127.0.0.1:8858
+      # 服务启动时直接建立心跳连接
+      eager: true
+      # Sentinel 储存规则的数据源配置(我这里使用的是Nacos来存储Sentinel的限流规则)
+#      datasource:
+#        ds-flow:
+#          nacos:
+#            # Nacos 服务地址（可配置单点，或者集群的VIP地址）
+#            server-addr: nacos:8848
+#            username: nacos
+#            password: nacos
+#            rule-type: flow
+#        ds-degrade:
+#          nacos:
+#            # Nacos 服务地址（可配置单点，或者集群的VIP地址）
+#            server-addr: nacos:8848
+#            username: nacos
+#            password: nacos
+#            rule-type: degrade
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: parrot-oj-backend-user-service
+          uri: lb://parrot-oj-backend-user-service
+          predicates:
+            - Path=/api/user/**
+        - id: parrot-oj-backend-question-service
+          uri: lb://parrot-oj-backend-question-service
+          predicates:
+            - Path=/api/question/**
+        - id: parrot-oj-backend-judge-service
+          uri: lb://parrot-oj-backend-judge-service
+          predicates:
+            - Path=/api/judge/**
+  main:
+    web-application-type: reactive
+
+knife4j:
+  gateway:
+    # ① 第一个配置，开启gateway聚合组件
+    enabled: true
+    # ② 第二行配置，设置聚合模式采用discover服务发现的模式
+    strategy: discover
+    discover:
+      # ③ 第三行配置，开启discover模式
+      enabled: true
+      # ④ 第四行配置，聚合子服务全部为Swagger2规范的文档
+      version: swagger2

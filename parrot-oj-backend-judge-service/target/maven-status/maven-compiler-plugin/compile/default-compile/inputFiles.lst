@@ -1,0 +1,11 @@
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\rabbitmq\RabbitMQInitBean.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\service\judge\JavaJudge.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\inner\InnerJudgeService.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\service\judge\DefaultJudge.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\service\judge\JudgeManager.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\service\JudgeService.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\rabbitmq\MyMessageConsumer.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\ParrotOjBackendJudgeServiceApplication.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\aop\ControllerLogger.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\service\impl\JudgeServiceImpl.java
+D:\30215\xiangmu\parrot-oj-microservice-backend\parrot-oj-backend-judge-service\src\main\java\com\tatakai\parrotojbackendjudgeservice\service\judge\JudgeStrategy.java

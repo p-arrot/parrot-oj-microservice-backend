@@ -1,0 +1,114 @@
+server:
+  address: 0.0.0.0
+  port: 8081
+  servlet:
+    context-path: /api/user
+    session:
+      cookie:
+        max-age: 2592000
+        path: /api
+
+mybatis:
+  mapper-locations: classpath:mappers/*xml
+  type-aliases-package: com.example.parrot.mybatis.entity
+  configuration:
+    map-underscore-to-camel-case: false
+spring:
+  application:
+    name: parrot-oj-backend-user-service
+  session:
+    store-type: redis
+    # 30 ???
+    timeout: 2592000
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    url: jdbc:mysql://mysql:3306/oj
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: redis
+    port: 6379
+    database: 0
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos:8848
+knife4j:
+  enable: true
+#  openapi:
+#    title: "接口文档"
+#    version: 1.0
+#    group:
+#      default:
+#        api-rule: package
+#        api-rule-resources:
+#          - com.tatakai.parrotojbackend.controller
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+code-sandbox:
+  type: remote
+
+############################################################
+#server:
+#  address: 0.0.0.0
+#  port: 8081
+#  servlet:
+#    context-path: /api/user
+#    session:
+#      cookie:
+#        max-age: 2592000
+#        path: /api
+#
+#mybatis:
+#  mapper-locations: classpath:mappers/*xml
+#  type-aliases-package: com.example.parrot.mybatis.entity
+#  configuration:
+#    map-underscore-to-camel-case: false
+#spring:
+#  application:
+#    name: parrot-oj-backend-user-service
+#  session:
+#    store-type: redis
+#    # 30 ???
+#    timeout: 2592000
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/oj
+#    username: root
+#    password: 1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    database: 0
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#        username: nacos
+#        password: nacos
+#knife4j:
+#  enable: true
+##  openapi:
+##    title: "接口文档"
+##    version: 1.0
+##    group:
+##      default:
+##        api-rule: package
+##        api-rule-resources:
+##          - com.tatakai.parrotojbackend.controller
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: false
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#code-sandbox:
+#  type: remote
+
+

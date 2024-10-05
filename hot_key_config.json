@@ -1,0 +1,10 @@
+[
+  {
+    "duration": 600,
+    "key": "question_detail_",
+    "prefix": true,
+    "interval": 5,
+    "threshold": 10,
+    "desc": "热门题库缓存"
+  }
+]

@@ -1,0 +1,3 @@
+com\tatakai\parrotojbackendserviceclient\JudgeFeignClient.class
+com\tatakai\parrotojbackendserviceclient\QuestionFeignClient.class
+com\tatakai\parrotojbackendserviceclient\UserFeignClient.class

@@ -1,0 +1,11 @@
+com\tatakai\parrotojbackendjudgeservice\inner\InnerJudgeService.class
+com\tatakai\parrotojbackendjudgeservice\rabbitmq\MyMessageConsumer.class
+com\tatakai\parrotojbackendjudgeservice\service\judge\DefaultJudge.class
+com\tatakai\parrotojbackendjudgeservice\service\judge\JudgeStrategy.class
+com\tatakai\parrotojbackendjudgeservice\rabbitmq\RabbitMQInitBean.class
+com\tatakai\parrotojbackendjudgeservice\service\judge\JudgeManager.class
+com\tatakai\parrotojbackendjudgeservice\aop\ControllerLogger.class
+com\tatakai\parrotojbackendjudgeservice\service\judge\JavaJudge.class
+com\tatakai\parrotojbackendjudgeservice\service\JudgeService.class
+com\tatakai\parrotojbackendjudgeservice\ParrotOjBackendJudgeServiceApplication.class
+com\tatakai\parrotojbackendjudgeservice\service\impl\JudgeServiceImpl.class

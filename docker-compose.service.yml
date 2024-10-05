@@ -1,0 +1,77 @@
+services:
+  hotkey-work:
+    container_name: hotkey-work
+    build:
+      context: ./hotkey-work
+      dockerfile: Dockerfile
+    ports:
+      - "8182:8182"
+    networks:
+      - my_network
+  hotkey-dashboard:
+    container_name: hotkey-dashboard
+    build:
+      context: ./hotkey-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "8181:8181"
+    networks:
+      - my_network
+  parrot-oj-backend-gateway:
+    container_name: parrot-oj-backend-gateway
+    build:
+      context: ./parrot-oj-backend-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - my_network
+#    network_mode: host
+
+
+  parrot-oj-backend-user-service:
+    container_name: parrot-oj-backend-user-service
+    build:
+      context: ./parrot-oj-backend-user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - my_network
+#    network_mode: host
+    depends_on:
+      - parrot-oj-backend-gateway
+
+  parrot-oj-backend-question-service:
+    container_name: parrot-oj-backend-question-service
+    build:
+      context: ./parrot-oj-backend-question-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    networks:
+      - my_network
+#    network_mode: host
+    depends_on:
+      - parrot-oj-backend-user-service
+      - parrot-oj-backend-gateway
+
+  parrot-oj-backend-judge-service:
+    container_name: parrot-oj-backend-judge-service
+    build:
+      context: ./parrot-oj-backend-judge-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    networks:
+      - my_network
+#    network_mode: host
+    depends_on:
+      - parrot-oj-backend-user-service
+      - parrot-oj-backend-question-service
+      - parrot-oj-backend-gateway
+
+# 网络，不定义的话就是默认网络
+networks:
+  my_network:
+

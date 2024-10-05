@@ -1,0 +1,138 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /api/question
+    session:
+      cookie:
+        max-age: 2592000
+        path: /api
+mybatis:
+  mapper-locations: classpath:mappers/*xml
+  type-aliases-package: com.tatakai.parrot.mybatis.domain
+  configuration:
+    map-underscore-to-camel-case: false
+spring:
+  elasticsearch:
+    uris: http://elasticsearch:9200
+  application:
+    name: parrot-oj-backend-question-service
+  session:
+    store-type: redis
+    # 30 ???
+    timeout: 2592000
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    url: jdbc:mysql://mysql:3306/oj
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: redis
+    port: 6379
+    database: 0
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos:8848
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+#
+knife4j:
+  enable: true
+#  openapi:
+#    title: "接口文档"
+#    version: 1.0
+#    group:
+#      default:
+#        api-rule: package
+#        api-rule-resources:
+#          - com.tatakai.parrotojbackend.controller
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+code-sandbox:
+  type: remote
+
+hotkey:
+  app-name: parrot-oj
+  etcd-server: http://Etcd:2379
+  caffeine-size: 10000
+  push-period: 1000
+
+########################################################
+#
+#server:
+#  port: 8082
+#  servlet:
+#    context-path: /api/question
+#    session:
+#      cookie:
+#        max-age: 2592000
+#        path: /api
+#mybatis:
+#  mapper-locations: classpath:mappers/*xml
+#  type-aliases-package: com.tatakai.parrot.mybatis.domain
+#  configuration:
+#    map-underscore-to-camel-case: false
+#spring:
+#  elasticsearch:
+#    uris: http://localhost:9200
+#  application:
+#    name: parrot-oj-backend-question-service
+#  session:
+#    store-type: redis
+#    # 30 ???
+#    timeout: 2592000
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/oj
+#    username: root
+#    password: 1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    database: 0
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#
+#
+#knife4j:
+#  enable: true
+##  openapi:
+##    title: "接口文档"
+##    version: 1.0
+##    group:
+##      default:
+##        api-rule: package
+##        api-rule-resources:
+##          - com.tatakai.parrotojbackend.controller
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: false
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#code-sandbox:
+#  type: remote
+#
+#hotkey:
+#  app-name: parrot-oj
+#  etcd-server: http://localhost:2379
+#  caffeine-size: 10000
+#  push-period: 1000
+#
